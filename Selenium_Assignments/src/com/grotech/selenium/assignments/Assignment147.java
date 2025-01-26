@@ -71,6 +71,18 @@ public class Assignment147 {
 		s5.selectByValue("Hindu");
 		Thread.sleep(1000);
 		s5.selectByVisibleText("Jain");
+		WebElement fileupload = driver.findElement(By.id("file"));
+		fileupload.sendKeys("C:\\Users\\mruty\\OneDrive\\Documents\\grotechminds.html");
+
+		WebElement relocate = driver.findElement(By.id("relocate"));
+		boolean b1 = relocate.isSelected();
+		if (!b1) {
+			relocate.click();
+		}
+		// select checkbox in either ways above or below relocate
+		/*
+		 * if (relocate.isDisplayed() && relocate.isEnabled()) { relocate.click(); }
+		 */
 
 		// WebElement submitbtn = driver.findElement(By.linkText("Submit"));
 
