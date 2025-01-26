@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>systemscenariosendtoend</groupId>
-	<artifactId>Amazon_Project</artifactId>
+	<artifactId>Amazon_Project_Assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Amazon_Project</name>
+	<name>Amazon_Project_Assignment</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
