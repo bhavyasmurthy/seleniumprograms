@@ -26,6 +26,8 @@ public class CartPage {
 	public void incrementproductcount(int count) throws InterruptedException {
 		for (int i = 0; i < count; i++) {
 			incrementcount.click();
+//			WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+
 			Thread.sleep(1000);
 		}
 	}

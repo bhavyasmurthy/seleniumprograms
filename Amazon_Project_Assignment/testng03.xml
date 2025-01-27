@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="org.grotech.assignment.amazon.automation.test.Testcase03_loginfails_invalid_username_password"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase15_Reach_cartpage_withoutlogin"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

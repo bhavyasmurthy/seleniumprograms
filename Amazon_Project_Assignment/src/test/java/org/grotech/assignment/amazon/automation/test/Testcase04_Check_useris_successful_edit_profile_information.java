@@ -23,9 +23,25 @@ public class Testcase04_Check_useris_successful_edit_profile_information extends
 		// to select adult profile
 		Profilepage profile = new Profilepage(driver);
 		profile.clickviewlink();
-		profile.editprofile();
-		profile.editname();
-		profile.clickcontinuebtn();
+//		profile.clickpreferrerddepartment();
+//		profile.clickpreferreddepartmentaddbutton();
+//		profile.clickdepartmenttype();
+//		profile.savedepartmenttypebtn();
+
+//		profile.clickheightandweight();
+//		profile.clickheightandweightaddbutton();
+//		profile.enterheight(160);
+//		profile.enterweight(60);
+//		profile.clicksavebutton();
+//		
+//		profile.clickagegroup();
+//		profile.clickheightandweightaddbutton();
+//		profile.selectagegroupbutton();
+		profile.clickoninterests();
+
+		// profile.editprofile();
+		// profile.editname();
+		// profile.clickcontinuebtn();
 
 	}
 
