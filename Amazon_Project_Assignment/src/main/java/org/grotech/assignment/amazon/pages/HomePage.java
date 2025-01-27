@@ -1,7 +1,5 @@
 package org.grotech.assignment.amazon.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,10 +34,6 @@ public class HomePage {
 	// product search
 	@FindBy(id = "twotabsearchtextbox")
 	WebElement productsearch;
-
-	// to sortby category,price
-	@FindBy(xpath = "//div[@class='a-popover-inner']/ul/li")
-	private List<WebElement> sortbyfeaturedropdown;
 
 	// hoveroveracctsandlistsclickyourorders
 	@FindBy(xpath = "//a[@id='nav_prefetch_yourorders']")
@@ -76,13 +70,6 @@ public class HomePage {
 	// to clear search field
 	public void clearsearchfield() {
 		productsearch.clear();
-	}
-
-	// sort by feature
-	public void sortbyfeaturedropdown(int index) {
-		WebElement dropdown = sortbyfeaturedropdown.get(index);
-		System.out.println(dropdown.getText());
-		dropdown.click();
 	}
 
 //	public void sortbynewerstarrival() {

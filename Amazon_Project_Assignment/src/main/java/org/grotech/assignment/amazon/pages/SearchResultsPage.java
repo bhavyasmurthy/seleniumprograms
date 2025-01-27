@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class SearchResultsPage {
 
@@ -21,6 +22,10 @@ public class SearchResultsPage {
 
 	@FindBy(xpath = "//a[@class='a-link-normal s-no-outline'][1]")
 	List<WebElement> searchlist;
+
+	// to sortby category,price
+	@FindBy(xpath = "//select[@id='s-result-sort-select']")
+	private WebElement sortbyfeaturedropdown;
 
 	public void selectproduct(int index) {
 		searchlist.get(index).click();
@@ -39,6 +44,14 @@ public class SearchResultsPage {
 		// System.out.println(xpath);
 		WebElement searchresulttext = driver.findElement(By.xpath(xpath));
 		return searchresulttext.isDisplayed();
+	}
+
+	// sort by feature
+	public void sortbyfeaturedropdown(String text) {// int index
+		Select select = new Select(sortbyfeaturedropdown);
+		// select.selectByIndex(index);
+		// select.selectByVisibleText(text);
+		select.selectByValue(text);
 	}
 
 }

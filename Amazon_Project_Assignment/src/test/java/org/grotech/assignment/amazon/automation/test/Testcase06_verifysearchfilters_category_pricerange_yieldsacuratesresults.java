@@ -17,7 +17,7 @@ public class Testcase06_verifysearchfilters_category_pricerange_yieldsacuratesre
 		filter.selectProductSize(9);
 		filter.selectCategory("Shoes");
 		filter.selectCategory("Women's Shoes");
-		filter.selectCategory("60% Off or more");
+		filter.selectCategory("10% Off or more");
 
 	}
 

@@ -58,7 +58,7 @@ public class Profilepage {
 	@FindBy(xpath = "//button[@class='text-option  '][5]")
 	private WebElement agegroupbutton;
 
-	@FindBy(xpath = "(//button[@class='pill-container '])[4])")
+	@FindBy(xpath = "(//button[@class='pill-container '])[4]")
 	WebElement interestsbutton;
 
 	/*
