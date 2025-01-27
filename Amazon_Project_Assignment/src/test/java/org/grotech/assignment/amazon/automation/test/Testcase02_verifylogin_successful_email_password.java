@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 //Verify login is successful with correct email and password.
 public class Testcase02_verifylogin_successful_email_password extends Testcase_LaunchandQuitBrowser {
+	
 	@Test
 	public void verifylogincredentilas() {
 		HomePage home = new HomePage(driver);
@@ -18,7 +19,6 @@ public class Testcase02_verifylogin_successful_email_password extends Testcase_L
 		login.continue_button();
 		login.setpwd();
 		login.signin();
-		// Assert.assertEquals(driver.i, null);
 		Assert.assertNotEquals(driver.getCurrentUrl(), "https://www.amazon.in/");
 	}
 

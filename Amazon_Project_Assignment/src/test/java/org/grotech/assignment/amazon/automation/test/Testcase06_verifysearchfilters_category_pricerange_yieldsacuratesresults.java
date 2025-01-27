@@ -10,12 +10,14 @@ public class Testcase06_verifysearchfilters_category_pricerange_yieldsacuratesre
 	@Test
 	public void testfilterproduct() {
 		HomePage home = new HomePage(driver);
-		home.searchproduct("shoe");
+		home.searchproduct("puma shoes for woman");
 
 		FilterpPage filter = new FilterpPage(driver);
-		// filter.selectproductsize(driver);
-		filter.selectproduct1checkbox(driver);
-		filter.chooseproductcolor(driver);
+		filter.movePriceRangeBy(100);
+		filter.selectProductSize(9);
+		filter.selectCategory("Shoes");
+		filter.selectCategory("Women's Shoes");
+		filter.selectCategory("60% Off or more");
 
 	}
 
