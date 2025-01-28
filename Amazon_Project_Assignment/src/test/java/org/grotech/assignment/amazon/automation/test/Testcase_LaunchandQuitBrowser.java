@@ -8,7 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class Testcase_LaunchandQuitBrowser {
-	WebDriver driver;
+
+	protected WebDriver driver;
 
 	@BeforeMethod
 	public void launch() {
@@ -16,12 +17,11 @@ public class Testcase_LaunchandQuitBrowser {
 		driver.get("https://www.amazon.in");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
 	}
 
 	@AfterMethod
 	public void quit() throws InterruptedException {
-		// driver.quit();
+		driver.quit();
 	}
 
 }

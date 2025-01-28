@@ -44,12 +44,21 @@ public class Testcase12_select_payment_methods extends Testcase_LaunchandQuitBro
 
 		// select use this address
 		checkoutPage.useThisAddress();
+		Thread.sleep(10000);
 
 		if (checkoutPage.isChangePaymentDisplayed()) {
 			checkoutPage.clickChangePayment();
 		}
+		Thread.sleep(6000);
 
 		checkoutPage.selectCreditCardPayment();
+		Thread.sleep(6000);
+		checkoutPage.selectnetbanking();
+		Thread.sleep(6000);
+		// checkoutPage.selectupiapp();
+		checkoutPage.selectcodapp();
+		Thread.sleep(6000);
+		checkoutPage.selectemiapp();
 
 	}
 }

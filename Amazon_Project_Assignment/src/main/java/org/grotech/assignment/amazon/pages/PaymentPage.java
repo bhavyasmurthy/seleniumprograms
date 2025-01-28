@@ -17,6 +17,10 @@ public class PaymentPage {
 	@FindBy(xpath = "(//input[@id='placeOrder'])")
 	private WebElement placeyourorder;
 
+	// for credit card option
+	@FindBy(xpath = "//span[@class='a-text-bold'][3]")
+	WebElement creditcard;
+
 	public void clickpaymentmethod() {
 		usethispaymentmethod.click();
 	}
@@ -33,6 +37,10 @@ public class PaymentPage {
 
 	public void clickonplaceorder() {
 		placeyourorder.click();
+	}
+
+	public void choosecreditcard() {
+		creditcard.click();
 	}
 
 }

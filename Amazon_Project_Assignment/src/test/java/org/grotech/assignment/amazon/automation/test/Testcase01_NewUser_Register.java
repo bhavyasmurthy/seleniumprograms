@@ -3,11 +3,15 @@ package org.grotech.assignment.amazon.automation.test;
 import org.grotech.assignment.amazon.pages.HomePage;
 import org.grotech.assignment.amazon.pages.Registration_Page;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 //Test if a new user can successfully register.
+
+@Listeners(TestngListener.class)
 public class Testcase01_NewUser_Register extends Testcase_LaunchandQuitBrowser {
-	@Test
+
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void register_new_user() {
 		HomePage homepage = new HomePage(driver);
 		homepage.hoveroverToAccountAndList();

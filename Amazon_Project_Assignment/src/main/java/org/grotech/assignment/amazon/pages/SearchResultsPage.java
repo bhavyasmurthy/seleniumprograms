@@ -47,11 +47,11 @@ public class SearchResultsPage {
 	}
 
 	// sort by feature
-	public void sortbyfeaturedropdown(String text) {// int index
+	public void sortbyfeaturedropdown(int index) {// String text
 		Select select = new Select(sortbyfeaturedropdown);
-		// select.selectByIndex(index);
+		select.selectByIndex(index);
 		// select.selectByVisibleText(text);
-		select.selectByValue(text);
+		// select.selectByValue(text);
 	}
 
 }

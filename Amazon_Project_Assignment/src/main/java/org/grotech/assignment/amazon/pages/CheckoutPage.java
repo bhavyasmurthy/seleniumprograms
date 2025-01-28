@@ -19,13 +19,15 @@ public class CheckoutPage {
 
 	// init elements
 	public CheckoutPage(WebDriver driver) {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		actions = new Actions(driver);
 		PageFactory.initElements(driver, this);
 	}
 
 	// click to change address
-	@FindBy(xpath = "//a[contains(text(), 'Change')]")
+	@FindBy(xpath = "(//a[contains(text(), 'Change')])[1]")
+	// "//a[@id='addressChangeLinkId']")
+
 	private WebElement changeAddress;
 
 	// address1
@@ -33,6 +35,8 @@ public class CheckoutPage {
 	private List<WebElement> addressess;
 
 	@FindBy(xpath = "(//a[contains(text(),'Change')])[2]")
+	// "(//a[@class='a-link-normal'])[3]")
+
 	private WebElement changePayment;
 
 	// click to use the address
@@ -45,8 +49,25 @@ public class CheckoutPage {
 	// @FindBy(xpath = "//span[@id='checkout-secondary-continue-button-id']")
 	private WebElement useThisPayment;
 
-	@FindBy(id = "pp-yos4PC-101")
+	@FindBy(xpath = "(//span[@class='a-text-bold'])[3]")
+	// (id = "pp-yos4PC-101")
 	private WebElement selectCreditCardPayment;
+
+	@FindBy(xpath = "(//span[@class='a-text-bold'])[4]")
+	// (id = "pp-yos4PC-101")
+	private WebElement selectnetbanking;
+
+	@FindBy(xpath = "//span[.='Other UPI Apps']")
+	// (id = "pp-yos4PC-101")
+	// (//span[@class='a-text-bold'])[5]
+	private WebElement selectupiapp;
+
+	@FindBy(xpath = "(//span[@class='a-text-bold'])[5]")
+	private WebElement selectemiapp;
+
+	// cod
+	@FindBy(xpath = "(//span[.='Cash on Delivery/Pay on Delivery'])[3]")
+	private WebElement selectcodapp;
 
 	// offer page link
 	@FindBy(xpath = "//a[@id='prime-panel-fallback-button']")
@@ -99,6 +120,7 @@ public class CheckoutPage {
 
 		actions.moveToElement(useThisAddress).perform();
 		actions.click(useThisAddress).perform();
+
 	}
 
 	// clicks on use this payment
@@ -119,14 +141,32 @@ public class CheckoutPage {
 		offerPage.click();
 	}
 
-	// click change address
+	// click change payment
 	public void clickChangePayment() {
-		actions.moveToElement(changePayment).perform();
-		actions.click(changePayment).perform();
+		changePayment.click();
+//		actions.moveToElement(changePayment).perform();
+//		actions.click(changePayment).perform();
 	}
 
+//choose payment option
 	public void selectCreditCardPayment() {
 		selectCreditCardPayment.click();
+	}
+
+	public void selectnetbanking() {
+		selectnetbanking.click();
+	}
+
+	public void selectupiapp() {
+		selectupiapp.click();
+	}
+
+	public void selectemiapp() {
+		selectemiapp.click();
+	}
+
+	public void selectcodapp() {
+		selectcodapp.click();
 	}
 
 	public boolean isplaceorderdisplayed() {

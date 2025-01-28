@@ -12,9 +12,13 @@ public class Testcase08_productsortbyrelevance_priceandrating extends Testcase_L
 		home.searchproduct("shoe");
 
 		SearchResultsPage search = new SearchResultsPage(driver);
-		// search.sortbyfeaturedropdown(2);
+		search.sortbyfeaturedropdown(0);
+		search.sortbyfeaturedropdown(1);
+		search.sortbyfeaturedropdown(2);
+		search.sortbyfeaturedropdown(3);
+
 		// search.sortbyfeaturedropdown("Avg. Customer Review");// for visibletext
-		search.sortbyfeaturedropdown("exact-aware-popularity-rank");// for value
+		// search.sortbyfeaturedropdown("exact-aware-popularity-rank");// for value
 
 	}
 }
