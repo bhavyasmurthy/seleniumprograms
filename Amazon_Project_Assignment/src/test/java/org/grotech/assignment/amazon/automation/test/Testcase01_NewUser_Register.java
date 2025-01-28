@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 //Test if a new user can successfully register.
 
 @Listeners(TestngListener.class)
-public class Testcase01_NewUser_Register extends Testcase_LaunchandQuitBrowser {
+public class Testcase01_NewUser_Register extends TestngListener {
 
 	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void register_new_user() {

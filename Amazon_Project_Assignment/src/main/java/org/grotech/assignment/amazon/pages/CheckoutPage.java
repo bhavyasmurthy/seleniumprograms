@@ -35,9 +35,8 @@ public class CheckoutPage {
 	private List<WebElement> addressess;
 
 	@FindBy(xpath = "(//a[contains(text(),'Change')])[2]")
-	// "(//a[@class='a-link-normal'])[3]")
-
 	private WebElement changePayment;
+	// "(//a[@class='a-link-normal'])[3]")
 
 	// click to use the address
 	@FindBy(xpath = "//span[@id='orderSummaryPrimaryActionBtn-announce']")

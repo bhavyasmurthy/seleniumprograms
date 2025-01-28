@@ -6,12 +6,14 @@ import org.grotech.assignment.amazon.pages.HomePage;
 import org.grotech.assignment.amazon.pages.LoginPage;
 import org.grotech.assignment.amazon.pages.Product1Page;
 import org.grotech.assignment.amazon.pages.SearchResultsPage;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 // Check if user is able to select each payment method
-
+@Listeners(TestngListener.class)
 public class Testcase12_select_payment_methods extends Testcase_LaunchandQuitBrowser {
-	@Test
+
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void testproductdescription() throws InterruptedException {
 
 		HomePage home = new HomePage(driver);

@@ -5,38 +5,21 @@ import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-public class TestngListener implements ITestListener {
-
-	private static WebDriver driver;
+public class TestngListener extends Testcase_LaunchandQuitBrowser implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		driver = new EdgeDriver();
 		ITestListener.super.onTestStart(result);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		ITestListener.super.onTestSuccess(result);
-		Reporter.log("Testcase Pass-L");
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File src = ts.getScreenshotAs(OutputType.FILE);
-		File des = new File(
-				"C:\\Users\\mruty\\OneDrive\\Desktop\\githubforjava\\seleniumprograms\\Amazon_Project_Assignment\\screenshots\\success\\"
-						+ System.currentTimeMillis() + ".png");
-		try {
-			FileHandler.copy(src, des);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 
 	}
 

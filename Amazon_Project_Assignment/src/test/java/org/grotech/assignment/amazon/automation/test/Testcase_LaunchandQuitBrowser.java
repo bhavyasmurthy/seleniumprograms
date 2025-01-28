@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class Testcase_LaunchandQuitBrowser {
 
-	protected WebDriver driver;
+	public static WebDriver driver;
 
 	@BeforeMethod
 	public void launch() {
@@ -21,7 +21,7 @@ public class Testcase_LaunchandQuitBrowser {
 
 	@AfterMethod
 	public void quit() throws InterruptedException {
-		driver.quit();
+		// driver.quit();
 	}
 
 }
