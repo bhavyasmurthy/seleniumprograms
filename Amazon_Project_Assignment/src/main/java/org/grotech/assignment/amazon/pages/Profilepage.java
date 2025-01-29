@@ -69,6 +69,8 @@ public class Profilepage {
 	}
 
 	public void changedepartmenttype() {
+		// first get the element of pop over and then search for Women or Men element
+		// from popover
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
 		driverWait.until(ExpectedConditions.visibilityOf(popover));
