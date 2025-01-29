@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase06_verifysearchfilters_category_pricerange_yieldsacuratesresults"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase09_product_add_to_cart"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase15_Reach_cartpage_withoutlogin"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase08_productsortbyrelevance_priceandrating"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase03_loginfails_invalid_username_password"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase12_select_payment_methods"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase05_searchproduct_shoe"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase13_Applycouponcode_whileorderingproduct"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase01_NewUser_Register"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase07_product_details_informationprice_review__description"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase11_validatecheckout_process"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase14_orderspage_clickonlastorderedproduct_give5starrating"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase10_updatequantity_increment_and_remove"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase02_verifylogin_successful_email_password"/>
+      <class name="org.grotech.assignment.amazon.automation.test.Testcase04_Check_useris_successful_edit_profile_information"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
