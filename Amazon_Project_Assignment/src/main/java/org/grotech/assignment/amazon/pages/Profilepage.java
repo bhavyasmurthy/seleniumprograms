@@ -1,10 +1,14 @@
 package org.grotech.assignment.amazon.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Profilepage {
 
@@ -30,7 +34,7 @@ public class Profilepage {
 	@FindBy(xpath = "//button[@class='attribute-action']")
 	private WebElement preferreddepartmentaddbutton;
 
-	@FindBy(xpath = "//button[.='Women']")
+	@FindBy(xpath = "//button[.='Men']")
 	private WebElement departmenttype;
 
 	@FindBy(xpath = "(//span[.='Save'])[4]")
@@ -55,7 +59,8 @@ public class Profilepage {
 	@FindBy(xpath = "(//div[@class='accordion-trigger-content desktop'])[3]")
 	private WebElement agegroup;
 
-	@FindBy(xpath = "//button[@class='text-option  '][5]")
+	@FindBy(xpath = "//button[.='35-39']")
+	// "//button[@class='text-option '][5]")
 	private WebElement agegroupbutton;
 
 	@FindBy(xpath = "(//button[@class='pill-container '])[4]")
@@ -89,9 +94,10 @@ public class Profilepage {
 	}
 
 	public void clickdepartmenttype() {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverWait.until(ExpectedConditions.visibilityOf(departmenttype));
 		departmenttype.click();
 
-		// WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		// WebElement departmenttype =
 		// driver.findElement(By.xpath("//button[@aria-label='Women']"));
 		// Actions actions = new Actions(driver);

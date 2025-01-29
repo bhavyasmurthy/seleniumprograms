@@ -38,6 +38,24 @@ public class PaymentPage {
 	private WebElement applybutton;
 	// span[@id='pp-FENWG0-101']
 
+	// for creditcard details
+	// to enter credtcard details in textbox
+	@FindBy(xpath = "//input[@name='addCreditCardNumber']")
+	WebElement cardnumbertextbox;
+
+	@FindBy(name = "ApxSecureIframe")
+	WebElement creditcardiframe;
+
+	@FindBy(xpath = "//a[.='Save Card']")
+	private WebElement savecardlink;
+
+	public void creditcardiframe_method(WebDriver driver) {
+		driver.switchTo().frame(creditcardiframe);
+		cardnumbertextbox.sendKeys("4578090034667572");
+
+		// driver.switchTo().defaultContent();
+	}
+
 	public void clickpaymentmethod() {
 		usethispaymentmethod.click();
 	}
@@ -58,6 +76,10 @@ public class PaymentPage {
 
 	public void choosecreditcard() {
 		creditcard.click();
+	}
+
+	public void clickonsavecard() {
+		savecardlink.click();
 	}
 
 	public void clickcouponcode() {

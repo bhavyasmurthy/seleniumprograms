@@ -20,24 +20,35 @@ public class Testcase04_Check_useris_successful_edit_profile_information extends
 		// to click on manageprofiles link
 		home.hoveroverToAccountAndList();
 		home.clickonprofiles();
+
 		// to select adult profile
 		Profilepage profile = new Profilepage(driver);
 		profile.clickviewlink();
+
 //		profile.clickpreferrerddepartment();
 //		profile.clickpreferreddepartmentaddbutton();
 //		profile.clickdepartmenttype();
 //		profile.savedepartmenttypebtn();
 
-//		profile.clickheightandweight();
-//		profile.clickheightandweightaddbutton();
-//		profile.enterheight(160);
-//		profile.enterweight(60);
-//		profile.clicksavebutton();
-//		
-//		profile.clickagegroup();
-//		profile.clickheightandweightaddbutton();
-//		profile.selectagegroupbutton();
+		profile.clickheightandweight();
+		profile.clickheightandweightaddbutton();
+		profile.enterheight(160);
+		profile.enterweight(6);
+		Thread.sleep(2000);
+
+		// profile.savedepartmenttypebtn();
+		profile.clicksavebutton();
+
+		profile.clickagegroup();
+		profile.clickheightandweightaddbutton();
+		Thread.sleep(2000);
+		profile.selectagegroupbutton();
+		Thread.sleep(2000);
+		profile.clicksavebutton();
+
 		profile.clickoninterests();
+		Thread.sleep(2000);
+		profile.clicksavebutton();
 
 		// profile.editprofile();
 		// profile.editname();
