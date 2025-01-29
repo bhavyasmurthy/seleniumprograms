@@ -5,8 +5,7 @@ import org.grotech.assignment.amazon.pages.Product1Page;
 import org.grotech.assignment.amazon.pages.SearchResultsPage;
 import org.testng.annotations.Test;
 
-//Ensure that the product detail page displays all necessary
-//information (price, reviews, description).
+//Verify that items can be added to the shopping cart from product pages.
 
 public class Testcase09_product_add_to_cart extends Testcase_LaunchandQuitBrowser {
 	@Test

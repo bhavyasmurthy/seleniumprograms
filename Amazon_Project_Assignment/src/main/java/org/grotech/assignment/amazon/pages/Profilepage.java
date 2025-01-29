@@ -2,10 +2,7 @@ package org.grotech.assignment.amazon.pages;
 
 import java.time.Duration;
 
-<<<<<<< HEAD
-=======
 import org.openqa.selenium.By;
->>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,12 +32,9 @@ public class Profilepage {
 	@FindBy(xpath = "//button[@class='attribute-action']")
 	private WebElement preferreddepartmentaddbutton;
 
-<<<<<<< HEAD
 	@FindBy(xpath = "//button[.='Men']")
 	private WebElement departmenttype;
 
-=======
->>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 	@FindBy(xpath = "(//span[.='Save'])[4]")
 	private WebElement savedepartmenttypebutton;
 
@@ -78,19 +72,6 @@ public class Profilepage {
 		preferreddepartmentaddbutton.click();
 	}
 
-<<<<<<< HEAD
-	public void clickdepartmenttype() {
-		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driverWait.until(ExpectedConditions.visibilityOf(departmenttype));
-		departmenttype.click();
-
-		// WebElement departmenttype =
-		// driver.findElement(By.xpath("//button[@aria-label='Women']"));
-		// Actions actions = new Actions(driver);
-		// driverWait.until(ExpectedConditions.elementToBeClickable(departmenttype));
-
-		// actions.moveToElement(departmenttype).click().perform();
-=======
 	public void changedepartmenttype() {
 		// first get the element of pop over and then search for Women or Men element
 		// from popover
@@ -110,7 +91,6 @@ public class Profilepage {
 			driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypewomen));
 			new Actions(driver).moveToElement(departmenttypewomen).click().perform();
 		}
->>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 	}
 
 	public void savedepartmenttypebtn() {
