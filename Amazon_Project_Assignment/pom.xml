@@ -105,7 +105,7 @@
 					<version>3.3.1</version>
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng03.xml</suiteXmlFile>
+							<suiteXmlFile>testngamazonsuite.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
