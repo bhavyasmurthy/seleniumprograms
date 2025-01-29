@@ -5,7 +5,7 @@ import org.grotech.assignment.airline.pages.Regpage;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-public class Test1 extends LandQ {
+public class Test1 extends Testcase_LaunchandQuitBrowser {
 	@Test
 	public void register_signin() throws InterruptedException {
 		HoPage home = new HoPage(driver);

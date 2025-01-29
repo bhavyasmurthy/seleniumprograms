@@ -14,7 +14,7 @@ public class Testcase_LaunchandQuitBrowser {
 	@BeforeMethod
 	public void launch() {
 		driver = new EdgeDriver();
-		driver.get("https://www.amazon.in");
+		driver.get("https://www.airindia.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
