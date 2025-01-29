@@ -1,20 +1,61 @@
 package org.grotech.assignment.amazon.automation.test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+<<<<<<< HEAD
 import org.testng.annotations.Parameters;
+=======
+import org.testng.annotations.DataProvider;
+>>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 
 public class Testcase_LaunchandQuitBrowser {
 
 	public static WebDriver driver;
 
+<<<<<<< HEAD
 	@Parameters("browser")
+=======
+	@DataProvider(name = "login data")
+	public String[][] login_details() throws EncryptedDocumentException, IOException {
+		FileInputStream f1 = new FileInputStream("DDT\\bhavyasm.xlsx");
+		Workbook w1 = WorkbookFactory.create(f1);
+		// step3: give the sheet name where the details are present
+		Sheet s1 = w1.getSheet("login_data");
+		int rowsize = s1.getLastRowNum();
+		int columnsize = 2;
+		System.out.println("row size " + rowsize);
+		String[][] data = new String[rowsize][columnsize];
+		for (int i = 0; i < rowsize; i++) {
+			System.out.println("Entering the loop " + i);
+			Row r1 = s1.getRow(i);
+			for (int j = 0; j < columnsize; j++) {
+				if (r1.getCell(j) == null) {
+					continue;
+				}
+				if (CellType.NUMERIC == r1.getCell(j).getCellType()) {
+					data[i][j] = String.valueOf(r1.getCell(j).getNumericCellValue());
+				} else {
+					data[i][j] = r1.getCell(j).getStringCellValue();
+				}
+			}
+		}
+		return data;
+	}
+>>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 
 	@BeforeMethod
 	public void launch(String nameofbrowser) {
@@ -35,7 +76,7 @@ public class Testcase_LaunchandQuitBrowser {
 	}
 
 	@AfterMethod
-	public void quit() throws InterruptedException {
+	public void quit() {
 		// driver.quit();
 	}
 

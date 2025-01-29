@@ -12,17 +12,18 @@ import org.testng.annotations.Test;
 //payment method selection,and order review.
 
 public class Testcase11_validatecheckout_process extends Testcase_LaunchandQuitBrowser {
-	@Test
-	public void testproductdescription() throws InterruptedException {
+
+	@Test(dataProvider = "login data")
+	public void testproductdescription(String username, String password) throws InterruptedException {
 
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();
 		home.signin();
 
 		LoginPage login = new LoginPage(driver);
-		login.setusername();
+		login.setusername(username);
 		login.continue_button();
-		login.setpwd();
+		login.setpwd(password);
 		login.signin();
 
 		home.searchproduct("shoe");

@@ -12,16 +12,17 @@ import org.testng.annotations.Test;
 //Check if user is able to apply for coupon code while ordering the product
 
 public class Testcase13_Applycouponcode_whileorderingproduct extends Testcase_LaunchandQuitBrowser {
-	@Test
-	public void applycouponcode() throws InterruptedException {
+
+	@Test(dataProvider = "login data")
+	public void applycouponcode(String username, String password) throws InterruptedException {
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();
 		home.signin();
 
 		LoginPage login = new LoginPage(driver);
-		login.setusername();
+		login.setusername(username);
 		login.continue_button();
-		login.setpwd();
+		login.setpwd(password);
 		login.signin();
 
 		home.searchproduct("shoe");

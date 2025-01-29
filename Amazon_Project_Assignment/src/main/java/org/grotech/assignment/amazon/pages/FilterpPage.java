@@ -30,10 +30,10 @@ public class FilterpPage {
 		WebElement element = driver.findElement(By.xpath(xpath));
 		actions.moveToElement(element).perform();
 		element.click();
-//
-		String s = "//span[text()=\"Women's Shoes\"]";
-		String s1 = "//span[text()=\"" + category + "\"]";
-		String s3 = "a\"b\"" + category + "cd";
+
+//		String s = "//span[text()=\"Women's Shoes\"]";
+//		String s1 = "//span[text()=\"" + category + "\"]";
+//		String s3 = "a\"b\"" + category + "cd";
 	}
 
 	public void selectProductSize(int size) {

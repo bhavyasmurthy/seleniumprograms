@@ -2,6 +2,10 @@ package org.grotech.assignment.amazon.pages;
 
 import java.time.Duration;
 
+<<<<<<< HEAD
+=======
+import org.openqa.selenium.By;
+>>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,40 +22,33 @@ public class Profilepage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-//	@FindBy(xpath = "//div[.='Adult profile']")
-//	WebElement adultprofile;
 
-	// for viewlink
+	// for view link
 	@FindBy(linkText = "View")
-	// a[.='View']
 	private WebElement viewlink;
 
 	// for preferred department
-	@FindBy(xpath = "(//div[@class='accordion-trigger-content desktop'])[1]")
+	@FindBy(xpath = "//button[@id='accordion-preferred-department-id']")
 	private WebElement preferreddepartment;
 
 	// for add button inside preferred dept
 	@FindBy(xpath = "//button[@class='attribute-action']")
 	private WebElement preferreddepartmentaddbutton;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//button[.='Men']")
 	private WebElement departmenttype;
 
+=======
+>>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 	@FindBy(xpath = "(//span[.='Save'])[4]")
 	private WebElement savedepartmenttypebutton;
 
-	@FindBy(xpath = "(//div[@class='accordion-trigger-content desktop'])[2]")
+	@FindBy(xpath = "//button[@id='accordion-height-and-weight-id']")
 	private WebElement heightandweight;
 
-	// @FindBy(xpath = "(//button[@class='attribute-action'][3])")
 	@FindBy(xpath = "//button[@class='attribute-action']")
 	private WebElement heightandweightaddbutton;
-
-	@FindBy(xpath = "(//input[@class='number-input-box'])[1]")
-	private WebElement height;
-
-	@FindBy(xpath = "(//input[@class='number-input-box'])[2]")
-	private WebElement weight;
 
 	@FindBy(xpath = "//span[@class='a-button a-button-normal a-button-primary button']")
 	WebElement savebutton;
@@ -65,18 +62,6 @@ public class Profilepage {
 
 	@FindBy(xpath = "(//button[@class='pill-container '])[4]")
 	WebElement interestsbutton;
-
-	/*
-	 * // for edit profile
-	 * 
-	 * @FindBy(xpath = "//button[@class='edit-pencil-icon-button']") WebElement
-	 * editprofile;
-	 * 
-	 * @FindBy(xpath = "(//div[@class='sc-fUnMCh heBdHY profile-row'])[1]")
-	 * WebElement chooseprofile;
-	 * 
-	 * @FindBy(id = "editProfileNameInputId") WebElement editprofilename;
-	 */
 
 	@FindBy(xpath = "(//input[@class='a-button-input'])[3]")
 	WebElement continuebtn;
@@ -93,6 +78,7 @@ public class Profilepage {
 		preferreddepartmentaddbutton.click();
 	}
 
+<<<<<<< HEAD
 	public void clickdepartmenttype() {
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driverWait.until(ExpectedConditions.visibilityOf(departmenttype));
@@ -104,13 +90,36 @@ public class Profilepage {
 		// driverWait.until(ExpectedConditions.elementToBeClickable(departmenttype));
 
 		// actions.moveToElement(departmenttype).click().perform();
+=======
+	public void changedepartmenttype() {
+		// first get the element of pop over and then search for Women or Men element
+		// from popover
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
+		driverWait.until(ExpectedConditions.visibilityOf(popover));
+		WebElement departmenttypewomen = popover.findElement(By.xpath("//div/button[text()='Women']"));
+		if ("true".equals(departmenttypewomen.getDomAttribute("aria-checked"))) {
+			// department type women is already selected so selecting men
+			System.out.println("Selecting Men department type");
+			WebElement departmenttypemen = popover.findElement(By.xpath("//button[text()='Men']"));
+			driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypemen));
+			new Actions(driver).moveToElement(departmenttypemen).click().perform();
+		} else {
+			// department type women is not selected so selecting women
+			System.out.println("Selecting Women department type");
+			driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypewomen));
+			new Actions(driver).moveToElement(departmenttypewomen).click().perform();
+		}
+>>>>>>> 6ab65cea1fc2677ce8a032cf29daf26cdf0d825b
 	}
 
 	public void savedepartmenttypebtn() {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverWait.until(ExpectedConditions.elementToBeClickable(savedepartmenttypebutton));
 		savedepartmenttypebutton.click();
 	}
 
-//for heightand weight
+	// for height and weight
 	public void clickheightandweight() {
 		heightandweight.click();
 	}
@@ -120,10 +129,20 @@ public class Profilepage {
 	}
 
 	public void enterheight(int value) {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
+		driverWait.until(ExpectedConditions.visibilityOf(popover));
+		WebElement height = popover.findElement(By.xpath("(//input[@class='number-input-box'])[1]"));
+		driverWait.until(ExpectedConditions.elementToBeClickable(height));
 		height.sendKeys(String.valueOf(value));
 	}
 
 	public void enterweight(int value) {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
+		driverWait.until(ExpectedConditions.visibilityOf(popover));
+		WebElement weight = popover.findElement(By.xpath("(//input[@class='number-input-box'])[2]"));
+		driverWait.until(ExpectedConditions.elementToBeClickable(weight));
 		weight.sendKeys(String.valueOf(value));
 	}
 
@@ -143,17 +162,6 @@ public class Profilepage {
 	public void clickoninterests() {
 		interestsbutton.click();
 	}
-
-	/*
-	 * public void editprofile() { editprofile.click();
-	 * 
-	 * }
-	 * 
-	 * public void editname() { editprofilename.clear();
-	 * editprofilename.sendKeys("Bhavya S Murthy");
-	 * 
-	 * }
-	 */
 
 	public void clickcontinuebtn() {
 		Actions actions = new Actions(driver);
