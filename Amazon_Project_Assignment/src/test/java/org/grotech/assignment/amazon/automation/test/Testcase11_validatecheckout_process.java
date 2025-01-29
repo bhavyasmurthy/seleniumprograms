@@ -44,10 +44,11 @@ public class Testcase11_validatecheckout_process extends Testcase_LaunchandQuitB
 			checkoutPage.clickChangeAddress();
 		}
 		checkoutPage.chooseAddress(1);
-		checkoutPage.clickChangePayment();
-
 		// select use this address
+
 		checkoutPage.useThisAddress();
+
+		checkoutPage.clickChangePayment();
 
 		// select use this payment
 		checkoutPage.useThisPayment();
