@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class Testcase04_Check_useris_successful_edit_profile_information extends Testcase_LaunchandQuitBrowser {
 
 	@Test(dataProvider = "login data")
-	public void editProfileInformation(String username, String password) throws InterruptedException {
+	public void editProfileInformation(String username, String password) {
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();
 		home.signin();
@@ -18,17 +18,20 @@ public class Testcase04_Check_useris_successful_edit_profile_information extends
 		login.continue_button();
 		login.setpwd(password);
 		login.signin();
-		// to click on manageprofiles link
+		// to click on manage profiles link
 		home.hoveroverToAccountAndList();
 		home.clickonprofiles();
 		// to select adult profile
 		Profilepage profile = new Profilepage(driver);
 		profile.clickviewlink();
-//		profile.clickpreferrerddepartment();
-//		profile.clickpreferreddepartmentaddbutton();
-//		profile.clickdepartmenttype();
-//		profile.savedepartmenttypebtn();
 
+		// selecting department type
+		profile.clickpreferrerddepartment();
+		profile.clickpreferreddepartmentaddbutton();
+		profile.changedepartmenttype();
+		profile.savedepartmenttypebtn();
+
+		// setting height and weight
 //		profile.clickheightandweight();
 //		profile.clickheightandweightaddbutton();
 //		profile.enterheight(160);
