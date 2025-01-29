@@ -29,9 +29,7 @@ public class TestngListener extends Testcase_LaunchandQuitBrowser implements ITe
 		Reporter.log("Testcase failed-L");
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		File des = new File(
-				"C:\\Users\\mruty\\OneDrive\\Desktop\\githubforjava\\seleniumprograms\\Amazon_Project_Assignment\\screenshots\\failure\\"
-						+ System.currentTimeMillis() + ".png");
+		File des = new File("screenshots\\failure\\" + System.currentTimeMillis() + ".png");
 		try {
 			FileHandler.copy(src, des);
 		} catch (IOException e) {

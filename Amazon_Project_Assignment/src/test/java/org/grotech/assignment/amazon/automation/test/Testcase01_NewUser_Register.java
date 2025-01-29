@@ -18,9 +18,6 @@ public class Testcase01_NewUser_Register extends TestngListener {
 		homepage.clickresgister();
 
 		Registration_Page register = new Registration_Page(driver);
-		// String s1 = register.getcreateaccountpageheader();
-		// Assert.assertEquals(s1, "Create Account");
-		// Assert.assertEquals(true, s1);
 		Assert.assertTrue(register.isPageDisplayed());
 		register.setUsername();
 		Assert.assertTrue(register.isUsernameDisplayed());

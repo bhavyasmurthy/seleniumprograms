@@ -26,16 +26,16 @@ public class LoginPage {
 	@FindBy(xpath = "(//span[@class='a-list-item'])[1]")
 	private WebElement wecannotfindanaccountwiththatemailaddress;
 
-	public void setusername() {
-		username.sendKeys("bhavyasmurthy@gmail.com");
+	public void setusername(String uname) {
+		username.sendKeys(uname);
 	}
 
 	public void continue_button() {
 		cntbutton.click();
 	}
 
-	public void setpwd() {
-		password.sendKeys("Hello@123");
+	public void setpwd(String pwd) {
+		password.sendKeys(pwd);
 	}
 
 	public void signin() {

@@ -9,17 +9,17 @@ import org.testng.annotations.Test;
 
 public class Testcase14_orderspage_clickonlastorderedproduct_give5starrating extends Testcase_LaunchandQuitBrowser {
 
-	@Test
-	public void give5starforlastorderedproduct() {
+	@Test(dataProvider = "login data")
+	public void give5starforlastorderedproduct(String username, String password) {
 
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();
 		home.signin();
 
 		LoginPage login = new LoginPage(driver);
-		login.setusername();
+		login.setusername(username);
 		login.continue_button();
-		login.setpwd();
+		login.setpwd(password);
 		login.signin();
 
 		HomePage homePage = new HomePage(driver);
