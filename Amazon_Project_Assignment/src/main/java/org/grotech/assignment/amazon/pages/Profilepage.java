@@ -28,6 +28,13 @@ public class Profilepage {
 	@FindBy(xpath = "//button[@id='accordion-preferred-department-id']")
 	private WebElement preferreddepartment;
 
+	// clear department type
+	@FindBy(xpath = "//button[text()='Clear']")
+	private WebElement clear;
+
+	@FindBy(xpath = "//span[contains(text(), 'Yes, clear my data')]/parent::span")
+	private WebElement savemychanges;
+
 	// for add button inside preferred dept
 	@FindBy(xpath = "//button[@class='attribute-action']")
 	private WebElement preferreddepartmentaddbutton;
@@ -41,7 +48,7 @@ public class Profilepage {
 	@FindBy(xpath = "//button[@id='accordion-height-and-weight-id']")
 	private WebElement heightandweight;
 
-	@FindBy(xpath = "//button[@class='attribute-action']")
+	@FindBy(xpath = "(//button[@class='attribute-action'])[2]")
 	private WebElement heightandweightaddbutton;
 
 	@FindBy(xpath = "//span[@class='a-button a-button-normal a-button-primary button']")
@@ -65,32 +72,34 @@ public class Profilepage {
 	}
 
 	public void clickpreferrerddepartment() {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
+		driverWait.until(ExpectedConditions.invisibilityOf(popover));
 		preferreddepartment.click();
+	}
+
+	public void cleardepartmenttype() {
+		clear.click();
+	}
+
+	public void saveclearedchanges() {
+		savemychanges.click();
 	}
 
 	public void clickpreferreddepartmentaddbutton() {
 		preferreddepartmentaddbutton.click();
 	}
 
-	public void changedepartmenttype() {
+	public void selectwomendepartmenttype() {
 		// first get the element of pop over and then search for Women or Men element
 		// from popover
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement popover = driver.findElement(By.xpath("//div[@class='a-popover a-popover-modal a-declarative']"));
 		driverWait.until(ExpectedConditions.visibilityOf(popover));
-		WebElement departmenttypewomen = popover.findElement(By.xpath("//div/button[text()='Women']"));
-		if ("true".equals(departmenttypewomen.getDomAttribute("aria-checked"))) {
-			// department type women is already selected so selecting men
-			System.out.println("Selecting Men department type");
-			WebElement departmenttypemen = popover.findElement(By.xpath("//button[text()='Men']"));
-			driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypemen));
-			new Actions(driver).moveToElement(departmenttypemen).click().perform();
-		} else {
-			// department type women is not selected so selecting women
-			System.out.println("Selecting Women department type");
-			driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypewomen));
-			new Actions(driver).moveToElement(departmenttypewomen).click().perform();
-		}
+		WebElement departmenttypewomen = popover.findElement(By.xpath("//button[text()='Women']"));
+		// department type women is not selected so selecting women
+		driverWait.until(ExpectedConditions.elementToBeClickable(departmenttypewomen));
+		departmenttypewomen.click();
 	}
 
 	public void savedepartmenttypebtn() {
@@ -101,10 +110,14 @@ public class Profilepage {
 
 	// for height and weight
 	public void clickheightandweight() {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverWait.until(ExpectedConditions.elementToBeClickable(heightandweight));
 		heightandweight.click();
 	}
 
 	public void clickheightandweightaddbutton() {
+		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverWait.until(ExpectedConditions.elementToBeClickable(heightandweightaddbutton));
 		heightandweightaddbutton.click();
 	}
 

@@ -27,9 +27,16 @@ public class Testcase04_Check_useris_successful_edit_profile_information extends
 		profile.clickviewlink();
 
 		profile.clickpreferrerddepartment();
+		try {
+			profile.cleardepartmenttype();
+			profile.saveclearedchanges();
+		} catch (Exception e) {
+			// clear does not exist
+		}
 		profile.clickpreferreddepartmentaddbutton();
-		profile.changedepartmenttype();
+		profile.selectwomendepartmenttype();
 		profile.savedepartmenttypebtn();
+		profile.clickpreferrerddepartment();
 
 //		profile.clickheightandweight();
 //		profile.clickheightandweightaddbutton();
