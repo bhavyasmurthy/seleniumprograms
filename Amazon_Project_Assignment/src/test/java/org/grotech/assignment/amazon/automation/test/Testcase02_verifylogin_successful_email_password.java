@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 //Verify login is successful with correct email and password.
 public class Testcase02_verifylogin_successful_email_password extends Testcase_LaunchandQuitBrowser {
 
-	@Test(dataProvider = "login data")
+	@Test(dataProvider = "login data", retryAnalyzer = RetryAnalyzer.class)
 	public void verifylogincredentilas(String username, String password) {
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();

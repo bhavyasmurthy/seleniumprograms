@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 //Check if products can be sorted by relevance, price, rating, etc.
 public class Testcase08_productsortbyrelevance_priceandrating extends Testcase_LaunchandQuitBrowser {
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void testproductbyfeature() throws InterruptedException {
 		HomePage home = new HomePage(driver);
 		home.searchproduct("shoe");

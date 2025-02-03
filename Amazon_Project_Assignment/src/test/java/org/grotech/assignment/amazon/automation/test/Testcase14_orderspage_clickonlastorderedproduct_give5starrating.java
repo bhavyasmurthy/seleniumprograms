@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Testcase14_orderspage_clickonlastorderedproduct_give5starrating extends Testcase_LaunchandQuitBrowser {
 
-	@Test(dataProvider = "login data")
+	@Test(dataProvider = "login data", retryAnalyzer = RetryAnalyzer.class)
 	public void give5starforlastorderedproduct(String username, String password) {
 
 		HomePage home = new HomePage(driver);

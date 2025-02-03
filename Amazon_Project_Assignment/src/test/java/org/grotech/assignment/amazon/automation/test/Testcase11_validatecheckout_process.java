@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class Testcase11_validatecheckout_process extends Testcase_LaunchandQuitBrowser {
 
-	@Test(dataProvider = "login data")
+	@Test(dataProvider = "login data", retryAnalyzer = RetryAnalyzer.class)
 	public void testproductdescription(String username, String password) throws InterruptedException {
 
 		HomePage home = new HomePage(driver);

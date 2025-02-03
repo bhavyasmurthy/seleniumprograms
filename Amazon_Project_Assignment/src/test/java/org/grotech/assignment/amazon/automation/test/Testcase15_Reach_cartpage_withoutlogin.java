@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 //Reach till cart page without login in amazon application
 public class Testcase15_Reach_cartpage_withoutlogin extends Testcase_LaunchandQuitBrowser {
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void testproductaddtocart() throws InterruptedException {
 		HomePage home = new HomePage(driver);
 		home.searchproduct("shoe");

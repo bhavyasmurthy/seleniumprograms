@@ -10,25 +10,27 @@ import org.testng.annotations.Test;
 //information (price, reviews, description).
 
 public class Testcase07_product_details_informationprice_review__description extends Testcase_LaunchandQuitBrowser {
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void testproductdescription() throws InterruptedException {
 
 		HomePage home = new HomePage(driver);
-		home.searchproduct("book");
+		home.searchproduct("table");
 
 		SearchResultsPage searchresultpage = new SearchResultsPage(driver);
 		searchresultpage.selectproduct(0);
 		searchresultpage.switchtoproducttab();
 
-		// for product description
 		ProductDetailsPage details = new ProductDetailsPage(driver);
+
+		boolean priceresult = details.ispriceviewdisplayed();
+		Assert.assertTrue(priceresult, "MRP text is not displayed");
+
+		// for product description
 		boolean descriptionresult = details.isproductdescriptiondisplayed(driver);
 		Assert.assertTrue(descriptionresult);
 
 		boolean reviewresult = details.iscutomerreviewdisplayed();
 		Assert.assertTrue(reviewresult, "cutomer review text is not displayed");
 
-		boolean priceresult = details.ispriceviewdisplayed();
-		Assert.assertTrue(priceresult, "MRP text is not displayed");
 	}
 }

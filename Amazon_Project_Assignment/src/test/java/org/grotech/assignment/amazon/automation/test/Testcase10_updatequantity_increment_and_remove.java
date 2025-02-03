@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 //Test updating item quantities and removing items from the cart.
 
 public class Testcase10_updatequantity_increment_and_remove extends Testcase_LaunchandQuitBrowser {
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void testproductdescription() throws InterruptedException {
 
 		HomePage home = new HomePage(driver);

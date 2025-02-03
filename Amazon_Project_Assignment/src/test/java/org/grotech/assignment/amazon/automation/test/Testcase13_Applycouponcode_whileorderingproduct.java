@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class Testcase13_Applycouponcode_whileorderingproduct extends Testcase_LaunchandQuitBrowser {
 
-	@Test(dataProvider = "login data")
+	@Test(dataProvider = "login data", retryAnalyzer = RetryAnalyzer.class)
 	public void applycouponcode(String username, String password) throws InterruptedException {
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();

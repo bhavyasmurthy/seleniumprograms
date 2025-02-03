@@ -63,7 +63,9 @@ public class Testcase12_select_payment_methods extends Testcase_LaunchandQuitBro
 
 		checkoutPage.selectnetbanking();
 		Thread.sleep(6000);
-		// checkoutPage.selectupiapp();
+		checkoutPage.selectupiapp();
+		Thread.sleep(6000);
+
 		checkoutPage.selectcodapp();
 		Thread.sleep(6000);
 		checkoutPage.selectemiapp();

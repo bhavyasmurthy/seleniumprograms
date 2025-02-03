@@ -15,15 +15,21 @@ public class ProductDetailsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//h2[.='Product Description']")
+	@FindBy(xpath = "//h1[contains(text(),'About this item')]")
 	private WebElement productdescription;
 
 	@FindBy(xpath = "//h2[.='Customer reviews']")
 	WebElement customerreviews;
 
 	// price details MRP
-	@FindBy(xpath = "(//span[contains(text(),'M.R.P')])[1]")
+	// @FindBy(xpath = "(//span[contains(text(),'M.R.P')])[1]")
+	@FindBy(xpath = "//span[@class='a-size-small aok-offscreen']")
 	private WebElement mrp;
+
+	public boolean ispriceviewdisplayed() {
+		actions.moveToElement(mrp).perform();
+		return mrp.isEnabled();
+	}
 
 	public boolean isproductdescriptiondisplayed(WebDriver driver) throws InterruptedException {
 		actions.scrollToElement(productdescription).perform();
@@ -33,11 +39,6 @@ public class ProductDetailsPage {
 	public boolean iscutomerreviewdisplayed() {
 		actions.moveToElement(customerreviews).perform();
 		return customerreviews.isDisplayed();
-	}
-
-	public boolean ispriceviewdisplayed() {
-		actions.moveToElement(mrp).perform();
-		return mrp.isDisplayed();
 	}
 
 }

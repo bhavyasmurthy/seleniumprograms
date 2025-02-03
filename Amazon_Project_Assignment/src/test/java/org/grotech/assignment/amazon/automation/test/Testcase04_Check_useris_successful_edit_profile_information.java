@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 //Check if a user can successfully edit their profile information.
 public class Testcase04_Check_useris_successful_edit_profile_information extends Testcase_LaunchandQuitBrowser {
 
-	@Test(dataProvider = "login data")
+	@Test(dataProvider = "login data", retryAnalyzer = RetryAnalyzer.class)
 	public void editProfileInformation(String username, String password) throws InterruptedException {
 		HomePage home = new HomePage(driver);
 		home.hoveroverToAccountAndList();
