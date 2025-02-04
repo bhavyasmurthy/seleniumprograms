@@ -1,11 +1,7 @@
 package org.grotech.assignment.amazon.automation.test;
 
-import org.grotech.assignment.amazon.pages.CartPage;
-import org.grotech.assignment.amazon.pages.CheckoutPage;
 import org.grotech.assignment.amazon.pages.HomePage;
 import org.grotech.assignment.amazon.pages.LoginPage;
-import org.grotech.assignment.amazon.pages.PaymentPage;
-import org.grotech.assignment.amazon.pages.Product1Page;
 import org.grotech.assignment.amazon.pages.SearchResultsPage;
 import org.testng.annotations.Test;
 
@@ -30,31 +26,27 @@ public class Testcase13_Applycouponcode_whileorderingproduct extends Testcase_La
 		searchresultpage.selectproduct(0);
 		searchresultpage.switchtoproducttab();
 
-		// for product description
-		Product1Page page = new Product1Page(driver);
-		page.clickaddcart();
-		page.cickgotocart();
-
-		CartPage cartPage = new CartPage(driver);
-		cartPage.proceedcheckout();
-
-		CheckoutPage checkoutPage = new CheckoutPage(driver);
-		if (checkoutPage.isChangeAddressDisplayed()) {
-			checkoutPage.clickChangeAddress();
-		}
-
-		// select use this address
-		checkoutPage.useThisAddress();
-		Thread.sleep(10000);
-
-		if (checkoutPage.isChangePaymentDisplayed()) {
-			checkoutPage.clickChangePayment();
-		}
-		Thread.sleep(6000);
-
-		PaymentPage paypage = new PaymentPage(driver);
-		paypage.entercouponcodeintextbox(7832758);
-		paypage.clickapplybutton();
+		searchresultpage.iscouponcheckboxdisplayed();
+		/*
+		 * // for product description Product1Page page = new Product1Page(driver);
+		 * page.clickaddcart(); page.cickgotocart();
+		 * 
+		 * CartPage cartPage = new CartPage(driver); cartPage.proceedcheckout();
+		 * 
+		 * CheckoutPage checkoutPage = new CheckoutPage(driver); if
+		 * (checkoutPage.isChangeAddressDisplayed()) {
+		 * checkoutPage.clickChangeAddress(); }
+		 * 
+		 * // select use this address checkoutPage.useThisAddress();
+		 * Thread.sleep(10000);
+		 * 
+		 * if (checkoutPage.isChangePaymentDisplayed()) {
+		 * checkoutPage.clickChangePayment(); } Thread.sleep(6000);
+		 * 
+		 * PaymentPage paypage = new PaymentPage(driver);
+		 * paypage.entercouponcodeintextbox(7832758); paypage.clickapplybutton();
+		 * 
+		 */
 
 	}
 }

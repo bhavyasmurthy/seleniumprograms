@@ -54,6 +54,7 @@ public class Testcase11_validatecheckout_process extends Testcase_LaunchandQuitB
 		checkoutPage.useThisPayment();
 
 		// write code to review order
+		checkoutPage.isreviewitemdisplayed();
 
 	}
 }

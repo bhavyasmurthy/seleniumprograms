@@ -76,6 +76,10 @@ public class CheckoutPage {
 	@FindBy(xpath = "//span[@id='submitOrderButtonId-announce']")
 	private WebElement placeyouorder;
 
+	// review order
+	@FindBy(xpath = "(//span[@class='break-word'])[2]")
+	private WebElement reviewitem;
+
 	// couponcode
 	@FindBy(xpath = "//input[@id='pp-pYALd6-102']")
 	private WebElement couponcode;
@@ -188,5 +192,14 @@ public class CheckoutPage {
 
 	public void clickonwriteaproductreview() {
 		writeproductreviewbtn.click();
+	}
+
+	public boolean isreviewitemdisplayed() {
+		try {
+			return reviewitem.isDisplayed();
+		} catch (NoSuchElementException nse) {
+			return false;
+		}
+
 	}
 }

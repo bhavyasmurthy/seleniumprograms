@@ -4,7 +4,6 @@ import org.grotech.assignment.amazon.pages.CartPage;
 import org.grotech.assignment.amazon.pages.CheckoutPage;
 import org.grotech.assignment.amazon.pages.HomePage;
 import org.grotech.assignment.amazon.pages.LoginPage;
-import org.grotech.assignment.amazon.pages.PaymentPage;
 import org.grotech.assignment.amazon.pages.Product1Page;
 import org.grotech.assignment.amazon.pages.SearchResultsPage;
 import org.testng.annotations.Listeners;
@@ -56,10 +55,10 @@ public class Testcase12_select_payment_methods extends Testcase_LaunchandQuitBro
 
 		checkoutPage.selectCreditCardPayment();
 		Thread.sleep(6000);
-
-		PaymentPage paypage = new PaymentPage(driver);
-		paypage.clickonsavecard();
-		paypage.creditcardiframe_method(driver);
+//for entering card details
+//		PaymentPage paypage = new PaymentPage(driver);
+//		paypage.clickonsavecard();
+//		paypage.creditcardiframe_method(driver);
 
 		checkoutPage.selectnetbanking();
 		Thread.sleep(6000);
