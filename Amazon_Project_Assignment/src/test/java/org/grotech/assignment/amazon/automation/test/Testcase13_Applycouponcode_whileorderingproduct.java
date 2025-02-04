@@ -2,6 +2,7 @@ package org.grotech.assignment.amazon.automation.test;
 
 import org.grotech.assignment.amazon.pages.HomePage;
 import org.grotech.assignment.amazon.pages.LoginPage;
+import org.grotech.assignment.amazon.pages.Product1Page;
 import org.grotech.assignment.amazon.pages.SearchResultsPage;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,9 @@ public class Testcase13_Applycouponcode_whileorderingproduct extends Testcase_La
 		searchresultpage.selectproduct(0);
 		searchresultpage.switchtoproducttab();
 
-		searchresultpage.iscouponcheckboxdisplayed();
+		Product1Page productpage = new Product1Page(driver);
+		productpage.iscouponcheckboxdisplayed();
+
 		/*
 		 * // for product description Product1Page page = new Product1Page(driver);
 		 * page.clickaddcart(); page.cickgotocart();

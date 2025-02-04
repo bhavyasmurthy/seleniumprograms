@@ -57,7 +57,8 @@ public class Profilepage {
 	@FindBy(xpath = "(//div[@class='accordion-trigger-content desktop'])[3]")
 	private WebElement agegroup;
 
-	@FindBy(xpath = "//button[.='35-39']")
+	@FindBy(xpath = "//button[contains(text(),'35-39')]")
+	// "//button[.='35-39']"
 	// "//button[@class='text-option '][5]")
 	private WebElement agegroupbutton;
 
@@ -148,7 +149,8 @@ public class Profilepage {
 		agegroup.click();
 	}
 
-	public void selectagegroupbutton() {
+	public void selectagegroupbutton() throws InterruptedException {
+		Thread.sleep(2000);
 		agegroupbutton.click();
 	}
 

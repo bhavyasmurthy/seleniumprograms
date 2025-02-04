@@ -41,6 +41,24 @@ public class FilterpPage {
 		driver.findElement(By.xpath(sizeXpath)).click();
 	}
 
+	public boolean isProductSizeselected(int size) {
+		String sizeXpath = "//button[@value='" + size + "']";
+		WebElement sizeElement = driver.findElement(By.xpath(sizeXpath));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(sizeElement));
+		String ariapressedvalue = sizeElement.getDomAttribute("aria-pressed");
+		return "true".equals(ariapressedvalue);
+	}
+
+	public boolean iscategoryheaderselected(String category) {
+		String xpath = "//span[text()=\"" + category + "\"]";
+		WebElement categoryElement = driver.findElement(By.xpath(xpath));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(categoryElement));
+		String ariapressedvalue = categoryElement.getDomAttribute("aria-pressed");
+		return "true".equals(ariapressedvalue);
+	}
+
 	public void movePriceRangeBy(int range) {
 		WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driverWait.until(ExpectedConditions.elementToBeClickable(priceRangeLowerBound));
