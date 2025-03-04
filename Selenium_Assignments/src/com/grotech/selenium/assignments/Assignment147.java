@@ -1,5 +1,7 @@
 package com.grotech.selenium.assignments;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ public class Assignment147 {
 	public static void main(String[] args) throws InterruptedException {
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("https://grotechminds.com/registration/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 
 		// driver.findElement(By.id("chat-bot-message-close")).click();
@@ -73,7 +76,7 @@ public class Assignment147 {
 		s5.selectByVisibleText("Jain");
 		WebElement fileupload = driver.findElement(By.id("file"));
 		fileupload.sendKeys("C:\\Users\\mruty\\OneDrive\\Documents\\grotechminds.html");
-
+		// fileupload.sendKeys("C:\\Users\\mruty\\Downloads\\New Text Document.txt");
 		WebElement relocate = driver.findElement(By.id("relocate"));
 		boolean b1 = relocate.isSelected();
 		if (!b1) {

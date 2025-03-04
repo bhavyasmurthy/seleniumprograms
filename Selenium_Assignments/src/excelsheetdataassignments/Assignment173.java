@@ -26,6 +26,7 @@ public class Assignment173 {
 		js.executeScript("window.scrollBy(" + x + "," + y + ")");
 		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(10," + y + ")");
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
 
 	}
 

@@ -35,6 +35,7 @@ public class Assignment166 {
 		String format1 = date.concat(" ").concat(month).concat(" ").concat(year).concat(" ").concat(time);
 
 		ChromeOptions options = new ChromeOptions();
+
 		options.addArguments("--headless==new");
 
 		ChromeDriver driver = new ChromeDriver(options);

@@ -4,8 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class Testcase_LaunchandQuitBrowser {
 
@@ -19,16 +19,16 @@ public class Testcase_LaunchandQuitBrowser {
 		return driver;
 	}
 
-	@BeforeClass
+	@BeforeMethod
 	public void setup() {
 		driver = initialize();
 		driver.get("https://www.cleartrip.com/");
 		driver.navigate().refresh();
 	}
 
-	@AfterClass
+	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		// driver.quit();
 	}
 
 }

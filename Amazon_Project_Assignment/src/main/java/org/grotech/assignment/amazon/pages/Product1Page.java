@@ -36,6 +36,7 @@ public class Product1Page {
 
 	public void iscouponcheckboxdisplayed() throws InterruptedException {
 		Actions actions = new Actions(driver);
+		// xpath="(//span[contains(text(),'with coupon')]//preceding :: div[3])[1]"
 		actions.moveToElement(selectcoupncheckbox).click().perform();
 
 	}

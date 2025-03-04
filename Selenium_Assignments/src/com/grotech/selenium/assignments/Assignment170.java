@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 //"Assignment 170
-//Write a program to aumate the website where right click does not work.https://retail.onlinesbi.sbi/retail/login.htm: Go to the site and provide user name and pwd using F12: "
+//Write a program to automate the website where right click does not work.https://retail.onlinesbi.sbi/retail/login.htm: Go to the site and provide user name and pwd using F12: "
 public class Assignment170 {
 
 	public static void main(String[] args) {
